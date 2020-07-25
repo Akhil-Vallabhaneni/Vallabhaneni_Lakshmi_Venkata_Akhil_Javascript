@@ -1,0 +1,254 @@
+
+<html>
+<head>
+<title>manager</title>
+<script type="text/javascript">
+function validateuname()
+{
+var a =  document.getElementById("uname").value;
+if(a.length==0)
+{
+  document.getElementById("err1").innerHTML="Please Enter username";
+  document.getElementById("err1").style.color="red";
+
+  document.getElementById("err1").focus();
+}
+else if(a.length<3)
+{
+  document.getElementById("err1").innerHTML="username must contains atleast 3 characters";
+  document.getElementById("err1").style.color="red";
+
+  document.getElementById("err1").focus();
+}
+else
+
+{
+ document.getElementById("err1").innerHTML="";
+}
+
+
+
+var b =  document.getElementById("vname").value;
+if(b.length<5)
+{
+  document.getElementById("err2").innerHTML="Password should have 5 characters";
+  document.getElementById("err2").style.color="red";
+
+  document.getElementById("err2").focus();
+}
+
+else
+
+{
+ document.getElementById("err2").innerHTML="";
+}	
+
+
+
+var c=document.getElementById("cmd").value;
+if(c!=b)
+{
+ document.getElementById("err3").innerHTML="confirm password and password must be equal ";
+  document.getElementById("err3").style.color="red";
+
+  document.getElementById("err3").focus(); 
+}
+else{
+document.getElementById("err3").innerHTML="";
+}
+
+
+var d=document.getElementById("age").value;
+if(d.length==0)
+{
+  document.getElementById("err4").innerHTML="age field should not be empty ";
+  document.getElementById("err4").style.color="red";
+
+  document.getElementById("err4").focus();
+}
+else if(isNaN(d))
+{
+  document.getElementById("err4").innerHTML="age field should be number ";
+  document.getElementById("err4").style.color="red";
+
+  document.getElementById("err4").focus();
+}
+else if(d<22)
+{
+document.getElementById("err4").innerHTML="age field should have 22 years ";
+  document.getElementById("err4").style.color="red";
+
+  document.getElementById("err4").focus();
+ }
+
+else{
+document.getElementById("err4").innerHTML="";
+}
+
+
+var e=document.getElementById("mob").value;
+if(e.length==0)
+{
+  document.getElementById("err5").innerHTML="must not empty ";
+  document.getElementById("err5").style.color="red";
+
+  document.getElementById("err5").focus(); 
+}
+else if(isNaN(e))
+{
+  document.getElementById("err5").innerHTML=" must be number ";
+  document.getElementById("err5").style.color="red";
+
+  document.getElementById("err5").focus(); 
+}
+else if(e.charAt(0)!=7 && e.charAt(0)!=8 && e.charAt(0)!=9)
+{
+  document.getElementById("err5").innerHTML="starts with 7 or 8 or 9 ";
+  document.getElementById("err5").style.color="red";
+
+  document.getElementById("err5").focus(); 
+}
+else if(e.length!=10)
+{
+  document.getElementById("err5").innerHTML="contains ten numbers ";
+  document.getElementById("err5").style.color="red";
+
+  document.getElementById("err5").focus(); 
+}
+
+else{
+document.getElementById("err5").innerHTML="";
+}
+
+
+ var email = document.getElementById("email").value;
+  var atpos = email.indexOf('@');
+
+ var dotpos = email.lastIndexOf('.');
+ if(email.length==0)
+ {
+  document.getElementById("err6").innerHTML="must not empty ";
+  document.getElementById("err6").style.color="red";
+
+  document.getElementById("err6").focus(); 
+ }
+ 
+else if(atpos<5 || dotpos-atpos<5)
+ {
+	document.getElementById("err6").innerHTML="enter valid email address ";
+  document.getElementById("err6").style.color="red";
+
+  document.getElementById("err6").focus(); 
+   }
+ else
+ {
+  document.getElementById("err6").innerHTML="";
+ 
+ }
+
+
+}
+</script>
+</head>
+<body>
+
+<style>
+div>ul>li>a{
+    text-decoration: none;
+    float: left;
+    float: right;
+    padding:10px 38px 0 22px;
+    color:white;
+    height:40px;
+
+}
+div{
+    background-color:orange;
+    height: 40px;
+    width:10%;
+    border-radius: 32px;
+}
+div>ul{
+    list-style-type: none;
+}
+
+div:hover{
+
+    background-color:#48B498;
+}
+
+body{
+background-color:lightblue;
+
+}
+td>input>{
+background:transparent;
+}
+
+
+</style>
+
+
+
+
+
+
+<form name="form" action="successs.html" method="post">
+<table align=center>
+<tr>
+<td>UserName</td>
+<td><input type="text" id="uname" placeholder="Enter firstname" onkeyup="validateuname()" required><span id="err1"></span></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" id="vname" onkeyup="validateuname()" placeholder="Enter password" required><span id="err2"></span></td>
+</tr>
+<tr>
+<td>Confirm password</td>
+<td>
+<input type="password" id="cmd" onkeyup="validateuname()" placeholder="confirm password" required><span id="err3"></span></td>
+</tr>
+<tr>
+<td>Age</td>
+
+<td>
+<input type="text" id="age" onkeyup="validateuname()" placeholder="Enter age" required><span id="err4"></span></td>
+</tr>
+<tr>
+<td>Contact No</td>
+<td><input type="text" id="mob" onkeyup="validateuname()" placeholder="Enter Mobile No" required><span id="err5"></span></td>
+
+</tr>
+<tr>
+<td>E-mail</td>
+<td>
+<input type="text" id="email" onkeyup="validateuname()" placeholder="Enter Email id" required><span id="err6"></span></td>
+</tr>
+<td>Select Gender</td>
+                    <td>Male<input type="radio" name="gender" value="Male" checked>
+Female<input type="radio" name="gender" value="Female"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td><input type="date" name="datetime" required></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea rows="3" cols="20"></textarea></td>
+                </tr>
+
+<tr>
+
+
+
+                 </table>
+<center>
+<div>
+        <ul>
+            <li><a href="manreg.html">Register</a></li>
+</ul>
+		</div>
+
+
+</body>
+</html>
